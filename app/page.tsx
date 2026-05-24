@@ -1,65 +1,71 @@
-import Image from "next/image";
+"use client";
+
+import type { CSSProperties } from "react";
+import { useRef, useState } from "react";
+import { BackgroundArt } from "../components/agency/BackgroundArt";
+import { ContactFormSection } from "../components/agency/ContactFormSection";
+import { Footer } from "../components/agency/Footer";
+import { Header } from "../components/agency/Header";
+import { HeroSection } from "../components/agency/HeroSection";
+import { OurWorkSection } from "../components/agency/OurWorkSection";
+import { ServicesBentoGrid } from "../components/agency/ServicesBentoGrid";
+import { TeamSection } from "../components/agency/TeamSection";
+import { TestimonialsSection } from "../components/agency/TestimonialsSection";
+import {
+  palettes,
+  teamMembers,
+  testimonials,
+  workItems,
+  services,
+} from "../components/agency/data";
+import { useAgencyAnimations } from "../components/agency/hooks/useAgencyAnimations";
+import { useSmoothScroll } from "../components/agency/hooks/useSmoothScroll";
+import type { ThemeMode } from "../components/agency/types";
 
 export default function Home() {
+  const [theme, setTheme] = useState<ThemeMode>("light");
+  const pageRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLButtonElement>(null);
+
+  useAgencyAnimations({ pageRef, ctaRef });
+  useSmoothScroll();
+
+  const palette = palettes[theme];
+  const darkMode = theme === "dark";
+  const onThemeToggle = () => {
+    setTheme((current) => (current === "light" ? "dark" : "light"));
+  };
+  const onStartProject = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <div
+      ref={pageRef}
+      style={
+        {
+          "--bg": palette.background,
+          "--surface": palette.surface,
+          "--fg": palette.foreground,
+          "--muted": palette.muted,
+          "--primary": palette.primary,
+        } as CSSProperties
+      }
+      className="relative min-h-screen overflow-x-clip bg-(--bg) text-(--fg) transition-colors duration-500"
+    >
+      <BackgroundArt />
+      <Header />
+
+      <main className="relative z-10 mx-auto flex w-full max-w-7xl flex-col gap-20 px-6 pb-20 md:px-10">
+        <HeroSection ctaRef={ctaRef} onStartProject={onStartProject} />
+        <OurWorkSection items={workItems} />
+        <ServicesBentoGrid items={services} />
+        <TestimonialsSection items={testimonials} />
+        <TeamSection members={teamMembers} />
+        <ContactFormSection />
       </main>
+
+      <Footer darkMode={darkMode} onThemeToggle={onThemeToggle} />
     </div>
   );
 }
