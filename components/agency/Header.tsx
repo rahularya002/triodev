@@ -1,8 +1,13 @@
+import { Logo } from "./Logo";
+
 export function Header() {
   return (
     <header className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-8 md:px-10">
-      <div className="hero-chip text-xs tracking-[0.24em] text-(--primary) uppercase">
-        triodev agency
+      <div className="flex items-center gap-2.5">
+        <Logo className="h-6 w-auto text-(--primary)" />
+        <span className="text-sm font-semibold tracking-[0.2em] text-(--primary) uppercase font-mono">
+          triodev
+        </span>
       </div>
       <a
         href="#contact"

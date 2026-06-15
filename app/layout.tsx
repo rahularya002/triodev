@@ -20,6 +20,11 @@ export const metadata: Metadata = {
   },
   description:
     "Triodev designs and develops modern web applications with product-first UX and performance-focused engineering.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   openGraph: {
     title: "Triodev - Design and Development Agency",
     description:
