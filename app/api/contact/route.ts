@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+import { sendContactNotification } from "@/lib/email/contact";
+import { createServiceRoleClient } from "@/lib/supabase/server";
 
 type ContactPayload = {
   name?: string;
@@ -49,12 +51,36 @@ export async function POST(request: Request) {
     );
   }
 
-  console.info("New contact inquiry", {
+  const supabase = createServiceRoleClient();
+
+  if (!supabase) {
+    console.error("Supabase is not configured. Set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY.");
+    return NextResponse.json(
+      { message: "Contact form is temporarily unavailable. Please try again later." },
+      { status: 503 }
+    );
+  }
+
+  const { error } = await supabase.from("contact_inquiries").insert({
     name,
     email,
-    budget,
-    briefLength: brief.length,
+    budget: budget || null,
+    brief,
   });
+
+  if (error) {
+    console.error("Failed to save contact inquiry", error);
+    return NextResponse.json(
+      { message: "Unable to submit inquiry right now. Please try again." },
+      { status: 500 }
+    );
+  }
+
+  const emailResult = await sendContactNotification({ name, email, budget, brief });
+
+  if (!emailResult.sent) {
+    console.warn("Contact inquiry saved but email notification was not sent.", emailResult);
+  }
 
   return NextResponse.json(
     {

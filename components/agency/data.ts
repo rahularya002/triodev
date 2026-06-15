@@ -78,25 +78,34 @@ export const processSteps: ProcessStep[] = [
 
 export const workItems: WorkItem[] = [
   {
-    title: "Nexa Finance Dashboard",
-    category: "Fintech",
-    summary: "A modular analytics dashboard with role-aware experience layers.",
-    impact: "+38% weekly active usage after redesign",
-    stack: ["Next.js", "TypeScript", "GSAP"],
+    title: "ENB Avatars",
+    category: "AI Platform",
+    summary:
+      "A studio for digital presence — design, deploy, and converse with high-fidelity AI avatars powered by a brand-specific knowledge base and sub-200ms interaction.",
+    impact: "Zero-latency human-like avatar experiences at scale",
+    stack: ["Next.js", "AI Avatars", "Real-time"],
+    image: "/projects/enb-avatars.png",
+    url: "https://avatars.enbquantum.com/",
   },
   {
-    title: "Pulse SaaS Onboarding",
-    category: "SaaS",
-    summary: "An adaptive onboarding journey that improved activation and retention.",
-    impact: "+24% activation in first 14 days",
-    stack: ["React", "Analytics", "A/B Testing"],
+    title: "VMOVEIT",
+    category: "Motion Portfolio",
+    summary:
+      "A cinematic motion design portfolio for Vishwash Bhardwaj — bold typography, neon energy, and design-driven motion for brands, promos, and social content.",
+    impact: "Immersive portfolio experience with scroll-driven motion",
+    stack: ["Motion Design", "GSAP", "Portfolio"],
+    image: "/projects/vmoveit.png",
+    url: "https://vishvas-portfolio-three.vercel.app/",
   },
   {
-    title: "Astra Commerce Studio",
-    category: "Commerce",
-    summary: "A headless storefront with visual merchandising and fast checkout flows.",
-    impact: "+19% checkout completion rate",
-    stack: ["Next.js", "Headless CMS", "Edge Caching"],
+    title: "Visionary Brothers",
+    category: "Creative Studio",
+    summary:
+      "An AI-powered creative studio reimagining brand storytelling — ad films, short films, digital marketing, and model promotions with cinematic visual narratives.",
+    impact: "Premium storytelling for brands and product campaigns",
+    stack: ["Next.js", "Video", "AI Creative"],
+    image: "/projects/visionary-brothers.png",
+    url: "https://vito-x-models.vercel.app/",
   },
 ];
 
@@ -130,24 +139,28 @@ export const teamMembers: TeamMember[] = [
     role: "Creative Director",
     initials: "RS",
     specialty: "Brand systems and product narrative",
+    image: "/team/raghav.svg",
   },
   {
     name: "Ira N.",
     role: "Senior Product Designer",
     initials: "IN",
     specialty: "Complex UX flows and design systems",
+    image: "/team/ira.svg",
   },
   {
     name: "Dev K.",
     role: "Frontend Engineer",
     initials: "DK",
     specialty: "React architecture and performance",
+    image: "/team/dev.svg",
   },
   {
     name: "Maya P.",
     role: "Motion Designer",
     initials: "MP",
     specialty: "Microinteraction choreography",
+    image: "/team/maya.svg",
   },
 ];
 

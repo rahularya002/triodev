@@ -31,6 +31,8 @@ export type WorkItem = {
   summary: string;
   impact: string;
   stack: string[];
+  image: string;
+  url: string;
 };
 
 export type TestimonialItem = {
@@ -45,4 +47,5 @@ export type TeamMember = {
   role: string;
   initials: string;
   specialty: string;
+  image: string;
 };

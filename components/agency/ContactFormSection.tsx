@@ -4,6 +4,9 @@ import { useState } from "react";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
+const MIN_BRIEF_LENGTH = 20;
+const MAX_BRIEF_LENGTH = 2000;
+
 export function ContactFormSection() {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [message, setMessage] = useState("");
@@ -30,6 +33,20 @@ export function ContactFormSection() {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) {
       setStatus("error");
       setMessage("Please enter a valid email address.");
+      return;
+    }
+
+    if (payload.brief.length < MIN_BRIEF_LENGTH) {
+      setStatus("error");
+      setMessage(
+        `Project brief is too short. Please share at least ${MIN_BRIEF_LENGTH} characters.`
+      );
+      return;
+    }
+
+    if (payload.brief.length > MAX_BRIEF_LENGTH) {
+      setStatus("error");
+      setMessage(`Project brief is too long. Keep it under ${MAX_BRIEF_LENGTH} characters.`);
       return;
     }
 
@@ -124,8 +141,13 @@ export function ContactFormSection() {
               placeholder="Tell us about your product, users, and timelines..."
               rows={5}
               required
+              minLength={MIN_BRIEF_LENGTH}
+              maxLength={MAX_BRIEF_LENGTH}
               className="rounded-xl border border-(--primary)/20 bg-(--bg) px-4 py-3 text-sm tracking-normal text-(--fg) outline-none transition focus:border-(--primary)/45 focus-visible:ring-2 focus-visible:ring-(--primary)/35"
             />
+            <span className="text-[11px] tracking-normal text-(--muted) normal-case">
+              At least {MIN_BRIEF_LENGTH} characters. Include goals, audience, and timeline if you can.
+            </span>
           </label>
           <p
             aria-live="polite"
@@ -135,7 +157,7 @@ export function ContactFormSection() {
               status === "success"
                 ? "text-(--primary)"
                 : status === "error"
-                  ? "text-red-600 dark:text-red-400"
+                  ? "text-[#b42318]"
                   : "text-(--muted)",
             ].join(" ")}
           >

@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Triodev
+
+Creative engineering studio site built with Next.js, GSAP, Lenis, Supabase, and Resend.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create `.env.local` in the project root:
 
-## Learn More
+```env
+# Supabase (required for contact form persistence)
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
 
-To learn more about Next.js, take a look at the following resources:
+# Resend (optional — form still saves if email is not configured)
+RESEND_API_KEY=re_xxxxxxxx
+CONTACT_NOTIFY_EMAIL=you@company.com
+RESEND_FROM_EMAIL=Triodev <notifications@yourdomain.com>
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Supabase setup
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Create or open a Supabase project.
+2. Apply the migration in [`supabase/migrations/20250615120000_create_contact_inquiries.sql`](supabase/migrations/20250615120000_create_contact_inquiries.sql):
 
-## Deploy on Vercel
+```bash
+supabase db push
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Or run the SQL in the Supabase SQL editor.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. Copy your project URL and **service role** key into `.env.local`.
+   - Never expose `SUPABASE_SERVICE_ROLE_KEY` in client code.
+
+### Resend setup
+
+1. Create a Resend account and API key.
+2. Verify your sending domain (or use `onboarding@resend.dev` for testing).
+3. Set `CONTACT_NOTIFY_EMAIL` to the inbox that should receive inquiries.
+
+If Resend is not configured, submissions are still saved to Supabase and the form returns success.
+
+## Features
+
+- Subtle scroll reveals and parallax (GSAP ScrollTrigger + Lenis)
+- Metrics, work, services, process, testimonials, and team sections
+- Contact form with Supabase persistence and optional email notifications
+
+## Scripts
+
+```bash
+npm run dev    # development server
+npm run build  # production build
+npm run start  # start production server
+npm run lint   # ESLint
+```

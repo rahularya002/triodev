@@ -5,7 +5,7 @@ type FooterProps = {
 
 export function Footer({ darkMode, onThemeToggle }: FooterProps) {
   return (
-    <footer className="mx-auto mt-4 w-full max-w-7xl px-6 pb-8 md:px-10">
+    <footer className="relative z-10 mx-auto mt-4 w-full max-w-7xl px-6 pb-8 md:px-10">
       <div className="footer-item flex items-center justify-between rounded-3xl border border-(--primary)/20 bg-(--surface) px-5 py-4">
         <p className="text-xs tracking-[0.2em] text-(--muted) uppercase">
           triodev - design x development studio

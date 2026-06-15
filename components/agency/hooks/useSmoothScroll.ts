@@ -1,9 +1,11 @@
 "use client";
 
-import { useEffect } from "react";
 import Lenis from "lenis";
+import { useEffect, useState } from "react";
 
 export function useSmoothScroll() {
+  const [lenis, setLenis] = useState<Lenis | null>(null);
+
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
@@ -11,7 +13,7 @@ export function useSmoothScroll() {
 
     if (prefersReducedMotion) return;
 
-    const lenis = new Lenis({
+    const instance = new Lenis({
       autoRaf: true,
       lerp: 0.08,
       smoothWheel: true,
@@ -22,18 +24,20 @@ export function useSmoothScroll() {
       stopInertiaOnNavigate: true,
     });
 
+    setLenis(instance);
+
     const onVisibilityChange = () => {
       if (document.visibilityState === "hidden") {
-        lenis.stop();
+        instance.stop();
       } else {
-        lenis.start();
-        lenis.resize();
+        instance.start();
+        instance.resize();
       }
     };
 
     const onWindowFocus = () => {
-      lenis.start();
-      lenis.resize();
+      instance.start();
+      instance.resize();
     };
 
     document.addEventListener("visibilitychange", onVisibilityChange);
@@ -44,7 +48,10 @@ export function useSmoothScroll() {
       document.removeEventListener("visibilitychange", onVisibilityChange);
       window.removeEventListener("focus", onWindowFocus);
       window.removeEventListener("resize", onWindowFocus);
-      lenis.destroy();
+      instance.destroy();
+      setLenis(null);
     };
   }, []);
+
+  return lenis;
 }
