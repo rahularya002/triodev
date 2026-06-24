@@ -179,7 +179,7 @@ export const faqs: FaqItem[] = [
   {
     question: "Who all are behind the agency?",
     answer:
-      "We're a team of 3 founders: a Designer, a Developer, and an Engineer covering creativity, functionality, and technical excellence.",
+      "We're a team of 5 people spanning design, development, and engineering, covering creativity, functionality, and technical excellence.",
   },
   {
     question: "Why choose us over freelancers?",
