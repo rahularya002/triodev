@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 import { BackgroundArt } from "../components/agency/BackgroundArt";
 import { ClosingCta } from "../components/agency/ClosingCta";
 import { ContactFormSection } from "../components/agency/ContactFormSection";
+import { FaqSection } from "../components/agency/FaqSection";
 import { Footer } from "../components/agency/Footer";
 import { Header } from "../components/agency/Header";
 import { HeroSection } from "../components/agency/HeroSection";
@@ -16,6 +17,7 @@ import { TeamSection } from "../components/agency/TeamSection";
 import { TestimonialsSection } from "../components/agency/TestimonialsSection";
 import { VisualShowcase } from "../components/agency/VisualShowcase";
 import {
+  faqs,
   metrics,
   palettes,
   processSteps,
@@ -72,6 +74,7 @@ export default function Home() {
           <TestimonialsSection items={testimonials} />
           <TeamSection members={teamMembers} />
           <ContactFormSection />
+          <FaqSection items={faqs} />
           <ClosingCta onStartProject={onStartProject} />
         </main>
 

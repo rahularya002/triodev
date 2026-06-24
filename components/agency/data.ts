@@ -1,4 +1,5 @@
 import type {
+  FaqItem,
   MetricItem,
   ProcessStep,
   ServiceItem,
@@ -161,6 +162,34 @@ export const teamMembers: TeamMember[] = [
     initials: "MP",
     specialty: "Microinteraction choreography",
     image: "/team/maya.svg",
+  },
+];
+
+export const faqs: FaqItem[] = [
+  {
+    question: "What exactly does our agency do?",
+    answer:
+      "We design and build websites, brands, and digital experiences that help businesses look professional and grow online.",
+  },
+  {
+    question: "What types of businesses do we work with?",
+    answer:
+      "We work with startups, creators, local businesses, and growing brands that want a strong online presence.",
+  },
+  {
+    question: "Who all are behind the agency?",
+    answer:
+      "We're a team of 3 founders: a Designer, a Developer, and an Engineer covering creativity, functionality, and technical excellence.",
+  },
+  {
+    question: "Why choose us over freelancers?",
+    answer:
+      "Instead of hiring multiple people separately, you get a complete team working together from strategy and design to development and launch.",
+  },
+  {
+    question: "How fast do you complete a project?",
+    answer:
+      "Most of our projects are completed within 4 weeks, without compromising on quality.",
   },
 ];
 

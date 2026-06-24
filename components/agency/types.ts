@@ -49,3 +49,8 @@ export type TeamMember = {
   specialty: string;
   image: string;
 };
+
+export type FaqItem = {
+  question: string;
+  answer: string;
+};
