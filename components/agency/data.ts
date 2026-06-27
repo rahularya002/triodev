@@ -7,45 +7,52 @@ import type {
   TestimonialItem,
   ThemeMode,
   ThemePalette,
+  TrustPoint,
   WorkItem,
 } from "./types";
 
 export const services: ServiceItem[] = [
   {
-    title: "Digital Identity",
-    detail: "Visual systems crafted for ambitious product teams and scaling products.",
-    tag: "Brand",
-    outcome: "Clearer positioning across product and marketing touchpoints.",
+    title: "Launch your MVP",
+    detail:
+      "Turn an idea into a production-ready product in weeks, not months. We help founders validate fast and ship something real users can try.",
+    tag: "Startups",
+    outcome: "An MVP you can put in front of users and investors.",
   },
   {
-    title: "Web App Design",
-    detail: "Interaction-first product experiences built for clarity and conversion.",
-    tag: "UX/UI",
-    outcome: "Lower friction across activation and daily workflows.",
+    title: "Scale your SaaS",
+    detail:
+      "Ship new features, improve performance, and support growth without rebuilding from scratch.",
+    tag: "SaaS",
+    outcome: "A product that grows with your users.",
   },
   {
-    title: "Engineering",
-    detail: "Scalable builds in React and Next.js with strict quality and performance standards.",
-    tag: "Build",
-    outcome: "Maintainable codebase and faster release cadence.",
+    title: "AI-powered workflows",
+    detail:
+      "Integrate AI into your product to automate repetitive work and create smarter user experiences.",
+    tag: "AI",
+    outcome: "Less manual work, more intelligent products.",
   },
   {
-    title: "Motion Systems",
-    detail: "Microinteractions and transitions that guide user attention and intent.",
-    tag: "GSAP",
-    outcome: "Higher perceived quality and stronger interaction confidence.",
+    title: "Modernize your business",
+    detail:
+      "Replace spreadsheets, manual processes, and disconnected tools with custom software built around how you actually work.",
+    tag: "Automation",
+    outcome: "Hours of manual work removed every week.",
   },
   {
-    title: "Conversion Optimization",
-    detail: "Landing and product flows improved through analytics-backed iterations.",
-    tag: "Growth",
-    outcome: "Improved qualified leads and trial-to-paid conversion rates.",
+    title: "Internal tools & dashboards",
+    detail:
+      "Custom portals, admin panels, and dashboards that give your team clarity and control.",
+    tag: "Internal",
+    outcome: "One source of truth for your operations.",
   },
   {
-    title: "Design Ops",
-    detail: "Reusable component libraries and tokens for faster team shipping.",
-    tag: "System",
-    outcome: "Unified UI quality across squads and releases.",
+    title: "Websites that convert",
+    detail:
+      "Fast, modern websites engineered to turn visitors into qualified leads, not just look good.",
+    tag: "Web",
+    outcome: "A site that earns trust and drives action.",
   },
 ];
 
@@ -56,24 +63,59 @@ export const projects: string[] = [
 ];
 
 export const metrics: MetricItem[] = [
-  { label: "Avg. launch cycle", value: "4 weeks" },
-  { label: "Team velocity", value: "2x faster" },
-  { label: "Core web vitals", value: "95+" },
-  { label: "Design QA", value: "pixel tight" },
+  { label: "Combined experience", value: "5+ yrs" },
+  { label: "Domains shipped", value: "SaaS · AI · E-com" },
+  { label: "Engagement", value: "Full-cycle" },
+  { label: "Architecture", value: "Built to scale" },
 ];
 
 export const processSteps: ProcessStep[] = [
   {
-    title: "Discover",
-    detail: "We map user intent, product constraints, and brand tone into one clear direction.",
+    title: "Discovery",
+    detail: "We learn your business, users, and goals to define what's actually worth building.",
   },
   {
-    title: "Prototype",
-    detail: "Interactive flows and motion logic are validated before final UI and engineering.",
+    title: "Product Strategy",
+    detail: "We shape scope, priorities, and a roadmap that gets you to value as fast as possible.",
   },
   {
-    title: "Ship",
-    detail: "Production-ready Next.js builds with performance and maintainability as defaults.",
+    title: "Design",
+    detail: "Interfaces and flows designed for clarity, conversion, and real-world usage.",
+  },
+  {
+    title: "Development & Testing",
+    detail: "Production-grade builds in React and Next.js, tested for reliability before launch.",
+  },
+  {
+    title: "Launch",
+    detail: "We ship to production and make sure it performs under real users and real load.",
+  },
+  {
+    title: "Ongoing Support",
+    detail: "We stay on as your engineering partner to improve, scale, and maintain what we built.",
+  },
+];
+
+export const trustPoints: TrustPoint[] = [
+  {
+    title: "Built across domains",
+    detail:
+      "Products shipped across SaaS, AI, recruitment, and e-commerce — not just marketing websites.",
+  },
+  {
+    title: "Modern, proven stack",
+    detail:
+      "Next.js, React, Node.js, Supabase, and AI integrations chosen for reliability and speed.",
+  },
+  {
+    title: "Architected to scale",
+    detail:
+      "We build maintainable systems that grow with your users instead of needing a rewrite later.",
+  },
+  {
+    title: "Full-cycle ownership",
+    detail:
+      "One team from product strategy and design to development, launch, and ongoing support.",
   },
 ];
 
@@ -83,8 +125,8 @@ export const workItems: WorkItem[] = [
     category: "AI Platform",
     summary:
       "A studio for digital presence — design, deploy, and converse with high-fidelity AI avatars powered by a brand-specific knowledge base and sub-200ms interaction.",
-    impact: "Zero-latency human-like avatar experiences at scale",
-    stack: ["Next.js", "AI Avatars", "Real-time"],
+    impact: "Real-time AI avatars deployable across web, mobile, and VR",
+    stack: ["SaaS Platform", "AI Product", "Real-time"],
     image: "/projects/enb-avatars.png",
     url: "https://avatars.enbquantum.com/",
   },
@@ -93,8 +135,8 @@ export const workItems: WorkItem[] = [
     category: "Motion Portfolio",
     summary:
       "A cinematic motion design portfolio for Vishwash Bhardwaj — bold typography, neon energy, and design-driven motion for brands, promos, and social content.",
-    impact: "Immersive portfolio experience with scroll-driven motion",
-    stack: ["Motion Design", "GSAP", "Portfolio"],
+    impact: "A standout portfolio that turns visitors into booked clients",
+    stack: ["Brand Site", "Motion", "Conversion"],
     image: "/projects/vmoveit.png",
     url: "https://vishvas-portfolio-three.vercel.app/",
   },
@@ -103,8 +145,8 @@ export const workItems: WorkItem[] = [
     category: "Creative Studio",
     summary:
       "An AI-powered creative studio reimagining brand storytelling — ad films, short films, digital marketing, and model promotions with cinematic visual narratives.",
-    impact: "Premium storytelling for brands and product campaigns",
-    stack: ["Next.js", "Video", "AI Creative"],
+    impact: "A premium brand presence for an AI-driven creative studio",
+    stack: ["Brand Platform", "Video", "AI Creative"],
     image: "/projects/visionary-brothers.png",
     url: "https://vito-x-models.vercel.app/",
   },
@@ -167,29 +209,29 @@ export const teamMembers: TeamMember[] = [
 
 export const faqs: FaqItem[] = [
   {
-    question: "What exactly does our agency do?",
+    question: "What exactly does Triodev do?",
     answer:
-      "We design and build websites, brands, and digital experiences that help businesses look professional and grow online.",
+      "We're a product engineering studio. We design and build custom software — SaaS platforms, AI products, dashboards, internal tools, and high-converting websites — that help businesses launch and grow.",
   },
   {
-    question: "What types of businesses do we work with?",
+    question: "Who do you work best with?",
     answer:
-      "We work with startups, creators, local businesses, and growing brands that want a strong online presence.",
+      "Startup founders and growing businesses that need a reliable partner to build or scale a product — from validating an MVP to extending a live SaaS platform.",
   },
   {
-    question: "Who all are behind the agency?",
+    question: "Who is behind the studio?",
     answer:
-      "We're a team of 5 people spanning design, development, and engineering, covering creativity, functionality, and technical excellence.",
+      "We're a team of 5 spanning product, design, and engineering, so you get strategy, design, and development under one roof instead of stitched-together freelancers.",
   },
   {
-    question: "Why choose us over freelancers?",
+    question: "Why choose you over freelancers?",
     answer:
-      "Instead of hiring multiple people separately, you get a complete team working together from strategy and design to development and launch.",
+      "Instead of hiring and managing several people separately, you get a complete team that owns the work end to end — strategy, design, development, launch, and ongoing support.",
   },
   {
-    question: "How fast do you complete a project?",
+    question: "How fast can you deliver?",
     answer:
-      "Most of our projects are completed within 4 weeks, without compromising on quality.",
+      "Most focused builds and MVPs ship in a few weeks. Larger platforms are delivered in milestones, so you see working software early and often instead of waiting months.",
   },
 ];
 

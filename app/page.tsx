@@ -1,7 +1,7 @@
 "use client";
 
 import type { CSSProperties } from "react";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { BackgroundArt } from "../components/agency/BackgroundArt";
 import { ClosingCta } from "../components/agency/ClosingCta";
 import { ContactFormSection } from "../components/agency/ContactFormSection";
@@ -14,7 +14,7 @@ import { OurWorkSection } from "../components/agency/OurWorkSection";
 import { ProcessSection } from "../components/agency/ProcessSection";
 import { ServicesBentoGrid } from "../components/agency/ServicesBentoGrid";
 import { TeamSection } from "../components/agency/TeamSection";
-import { TestimonialsSection } from "../components/agency/TestimonialsSection";
+import { TrustSection } from "../components/agency/TrustSection";
 import { VisualShowcase } from "../components/agency/VisualShowcase";
 import {
   faqs,
@@ -22,7 +22,7 @@ import {
   palettes,
   processSteps,
   teamMembers,
-  testimonials,
+  trustPoints,
   workItems,
   services,
 } from "../components/agency/data";
@@ -38,10 +38,25 @@ export default function Home() {
 
   useAgencyAnimations({ pageRef, ctaRef, lenis });
 
+  // Sync with HTML class applied by layout.tsx script
+  useEffect(() => {
+    const isDark = document.documentElement.classList.contains("dark");
+    setTheme(isDark ? "dark" : "light");
+  }, []);
+
   const palette = palettes[theme];
   const darkMode = theme === "dark";
   const onThemeToggle = () => {
-    setTheme((current) => (current === "light" ? "dark" : "light"));
+    const root = document.documentElement;
+    const newTheme = theme === "light" ? "dark" : "light";
+    if (newTheme === "dark") {
+      root.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      root.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+    setTheme(newTheme);
   };
   const onStartProject = () => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
@@ -71,7 +86,7 @@ export default function Home() {
           <VisualShowcase />
           <ServicesBentoGrid items={services} />
           <ProcessSection steps={processSteps} />
-          <TestimonialsSection items={testimonials} />
+          <TrustSection items={trustPoints} />
           <TeamSection members={teamMembers} />
           <ContactFormSection />
           <FaqSection items={faqs} />

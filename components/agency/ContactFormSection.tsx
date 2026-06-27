@@ -87,10 +87,10 @@ export function ContactFormSection() {
       <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
         <div>
           <p className="text-xs tracking-[0.2em] text-(--muted) uppercase">Contact</p>
-          <h2 className="mt-2 text-3xl font-semibold tracking-tight">Let us build your next webapp</h2>
+          <h2 className="mt-2 text-3xl font-semibold tracking-tight">Tell us what you&apos;re building</h2>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-(--muted)">
-            Share your idea, timeline, and goals. We will send back a project approach
-            with clear scope and phases.
+            Share your idea, timeline, and goals. We&apos;ll get back with a clear
+            approach, scope, and estimate - usually within 24 hours.
           </p>
         </div>
 
@@ -168,7 +168,7 @@ export function ContactFormSection() {
             disabled={status === "submitting"}
             className="hero-cta mt-1 w-fit rounded-full bg-(--primary) px-7 py-3 text-sm font-medium tracking-[0.14em] text-[#f6f4ed] uppercase transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-70"
           >
-            {status === "submitting" ? "Sending..." : "Send Inquiry"}
+            {status === "submitting" ? "Sending..." : "Get a project estimate"}
           </button>
         </form>
       </div>

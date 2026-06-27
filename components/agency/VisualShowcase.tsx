@@ -6,14 +6,13 @@ export function VisualShowcase() {
   return (
     <section className="space-y-6 py-12">
       <div className="section-item">
-        <p className="text-xs tracking-[0.2em] text-(--muted) uppercase font-mono font-semibold">Studio Craft</p>
+        <p className="text-xs tracking-[0.2em] text-(--muted) uppercase font-mono font-semibold">How we build</p>
         <h2 className="mt-2 text-3xl md:text-4xl font-semibold tracking-tight">
-          Design systems that ship with confidence
+          From prototype to production, without the chaos
         </h2>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-(--muted)">
-          We prototype interaction patterns early, validate flows with real
-          users, and translate the result into production-ready components your
-          team can scale.
+          We design and validate in high fidelity, then engineer maintainable
+          systems your team can keep building on long after launch.
         </p>
       </div>
 

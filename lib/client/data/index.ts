@@ -1,0 +1,12 @@
+export { clientCompany } from "./company"
+export { clientProjects, activeClientProjects, getClientProjectById } from "./projects"
+export { projectPhases, getPhasesByProject, defaultPhases } from "./phases"
+export { proposals } from "./proposals"
+export { deliverables, getDeliverablesByCategory } from "./deliverables"
+export { approvals, pendingApprovals } from "./approvals"
+
+export { upcomingMeetings, pastMeetings, meetings } from "@/lib/workspace/data/meetings"
+export { invoices, transactionHistory } from "@/lib/workspace/data/invoices"
+export { conversations, chatMessages, getMessagesByConversation } from "@/lib/workspace/data/messages"
+export { supportTickets } from "@/lib/workspace/data/support"
+export { activities } from "@/lib/workspace/data/activities"

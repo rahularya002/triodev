@@ -8,12 +8,15 @@ export function Header() {
         <span className="text-sm font-semibold tracking-[0.2em] text-(--primary) uppercase font-mono">
           triodev
         </span>
+        <span className="hidden text-[10px] tracking-[0.18em] text-(--muted) uppercase sm:inline">
+          / Product Engineering Studio
+        </span>
       </div>
       <a
         href="#contact"
         className="rounded-full border border-(--primary)/35 bg-(--surface) px-4 py-2 text-xs tracking-[0.2em] uppercase transition hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--primary)/60"
       >
-        Contact
+        Book a call
       </a>
     </header>
   );

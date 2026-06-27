@@ -3,12 +3,32 @@
 
 :root {
   --background: #f6f4ed;
+  --surface: #ffffff;
   --foreground: #182117;
+  --muted: #5f6d5d;
+  --primary: #5f7c51;
+  --secondary: #edf1eb;
+  --border: #e2e8df;
+}
+
+.dark {
+  --background: #111612;
+  --surface: #1a221b;
+  --foreground: #eef3ea;
+  --muted: #b3c2b0;
+  --primary: #7f9a71;
+  --secondary: #222e23;
+  --border: #2a342c;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-border: var(--border);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -27,4 +47,20 @@ html.lenis body {
 
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
+}
+
+/* Custom Scrollbar for Workspace */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
 }

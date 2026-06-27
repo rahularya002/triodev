@@ -15,20 +15,20 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://triodev.studio"),
   title: {
-    default: "Triodev - Design and Development Agency",
+    default: "Triodev - Product Engineering Studio",
     template: "%s | Triodev",
   },
   description:
-    "Triodev designs and develops modern web applications with product-first UX and performance-focused engineering.",
+    "Triodev is a product engineering studio. We design and build SaaS platforms, AI products, dashboards, internal tools, and high-converting websites for startups and growing businesses.",
   icons: {
     icon: "/icon.svg",
     shortcut: "/icon.svg",
     apple: "/icon.svg",
   },
   openGraph: {
-    title: "Triodev - Design and Development Agency",
+    title: "Triodev - Product Engineering Studio",
     description:
-      "Design-led web app studio for ambitious products. Strategy, UX/UI, motion, and Next.js engineering.",
+      "We build software that helps businesses move faster - SaaS platforms, AI products, dashboards, and modern websites for startups and growing businesses.",
     url: "https://triodev.studio",
     siteName: "Triodev",
     locale: "en_US",
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Triodev - Design and Development Agency",
+    title: "Triodev - Product Engineering Studio",
     description:
-      "We design and develop high-performance web applications with premium interaction design.",
+      "Custom software for startups and growing businesses - SaaS, AI products, dashboards, internal tools, and websites that convert.",
   },
 };
 
@@ -52,6 +52,22 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const theme = localStorage.getItem('theme');
+                if (theme === 'dark') {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              } catch (_) {}
+            `,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

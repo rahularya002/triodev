@@ -8,11 +8,11 @@ export function ProcessSection({ steps }: ProcessSectionProps) {
   return (
     <section className="space-y-5">
       <div className="section-item">
-        <p className="text-xs tracking-[0.2em] text-(--muted) uppercase">Process</p>
-        <h2 className="mt-2 text-3xl font-semibold tracking-tight">How we work with your team</h2>
+        <p className="text-xs tracking-[0.2em] text-(--muted) uppercase">How we work</p>
+        <h2 className="mt-2 text-3xl font-semibold tracking-tight">What happens after you hire us</h2>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-(--muted)">
-          A compact loop from discovery to production. We keep scope visible,
-          decisions fast, and momentum steady with weekly shipping cadence.
+          A clear path from first conversation to a live product - and a partner
+          who stays with you after launch.
         </p>
       </div>
 

@@ -54,3 +54,8 @@ export type FaqItem = {
   question: string;
   answer: string;
 };
+
+export type TrustPoint = {
+  title: string;
+  detail: string;
+};

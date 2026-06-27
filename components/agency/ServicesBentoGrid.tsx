@@ -42,12 +42,12 @@ export function ServicesBentoGrid({ items }: ServicesBentoGridProps) {
   return (
     <section className="space-y-8 py-12">
       <div className="section-item">
-        <p className="text-xs tracking-[0.2em] text-(--muted) uppercase font-mono font-semibold">Services</p>
+        <p className="text-xs tracking-[0.2em] text-(--muted) uppercase font-mono font-semibold">What we build</p>
         <h2 className="mt-2 text-3xl md:text-4xl font-semibold tracking-tight">
-          Design and development stack
+          Software that solves real business problems
         </h2>
         <p className="mt-3 text-sm text-(--muted) max-w-xl">
-          We combine visual excellence with high-performance code to ship features and systems that scale.
+          Whether you're launching an MVP, modernizing operations, or scaling a SaaS product, we build the software that gets you there.
         </p>
       </div>
 
