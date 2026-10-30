@@ -50,8 +50,8 @@ export const meetings: Meeting[] = [
     recordingUrl: "https://drive.google.com/recording/sprint3",
     attendees: teamMembers.slice(0, 4),
     actionItems: [
-      { id: "a3", text: "Document API change process", completed: true, assignee: "Mike Kumar" },
-      { id: "a4", text: "Schedule design review", completed: true, assignee: "Alice Smith" },
+      { id: "a3", text: "Document API change process", completed: true, assignee: "Ritik Saini" },
+      { id: "a4", text: "Schedule design review", completed: true, assignee: "Chetna Sharma" },
     ],
     isPast: true,
   },

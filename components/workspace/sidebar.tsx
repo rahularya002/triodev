@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { 
   LayoutDashboard, 
+  BarChart3,
   FolderKanban, 
   Clock, 
   CheckSquare, 
@@ -20,14 +21,16 @@ import {
   Bell,
   Moon,
   Sun,
-  ChevronDown,
-  ChevronsUpDown
+  LogOut,
+  ChevronsUpDown,
 } from "lucide-react"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { SidebarUser } from "@/components/auth/sidebar-user"
+import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip"
 import { Logo } from "@/components/agency/Logo"
 
 const navItems = [
   { name: "Overview", href: "/admin", icon: LayoutDashboard },
+  { name: "Analytics", href: "/admin/analytics", icon: BarChart3 },
   { name: "Projects", href: "/admin/projects", icon: FolderKanban },
   { name: "Timeline", href: "/admin/timeline", icon: Clock },
   { name: "Tasks", href: "/admin/tasks", icon: CheckSquare },
@@ -150,23 +153,26 @@ export function Sidebar() {
             >
               {theme === "light" ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
             </button>
+            <Tooltip>
+              <TooltipTrigger>
+                <a
+                  href="/auth/signout"
+                  aria-label="Sign out"
+                  className="flex p-1.5 text-muted hover:text-foreground hover:bg-secondary/50 rounded-full transition-colors"
+                >
+                  <LogOut className="h-4 w-4" />
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>Sign out</TooltipContent>
+            </Tooltip>
           </div>
         </div>
         
-        <button className="flex w-full items-center justify-between rounded-2xl px-2 py-1.5 hover:bg-secondary/50 transition-colors">
-          <div className="flex items-center gap-2.5">
-            <Avatar className="h-7 w-7">
-              <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback>RC</AvatarFallback>
-            </Avatar>
-            <div className="flex flex-col items-start text-left">
-              <span className="text-xs font-semibold leading-none text-foreground">Rahul Client</span>
-              <span className="text-[10px] text-muted mt-1 leading-none">Acme Corp</span>
-            </div>
-          </div>
-          <ChevronDown className="h-3.5 w-3.5 text-muted" />
-        </button>
+        <SidebarUser subtitle="Triodev Staff" />
       </div>
     </aside>
   )
 }
+
+
+

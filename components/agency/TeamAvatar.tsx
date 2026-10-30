@@ -95,7 +95,7 @@ export function TeamAvatar({ member }: TeamAvatarProps) {
   };
 
   return (
-    <article className="group">
+    <article className="group flex flex-col items-center text-center">
       <button
         ref={buttonRef}
         type="button"
@@ -104,7 +104,7 @@ export function TeamAvatar({ member }: TeamAvatarProps) {
         onMouseLeave={playLeave}
         onFocus={playHover}
         onBlur={playLeave}
-        className="relative flex h-44 w-44 shrink-0 items-center justify-center overflow-hidden rounded-full border border-(--primary)/25 bg-(--surface) text-center transition-[border-color,box-shadow] duration-300 hover:border-(--primary)/50 hover:shadow-[0_24px_48px_-28px_rgba(20,28,18,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--primary)/60 sm:h-48 sm:w-48 lg:h-52 lg:w-52"
+        className="relative flex h-40 w-40 shrink-0 items-center justify-center overflow-hidden rounded-full border border-(--primary)/25 bg-(--surface) text-center transition-[border-color,box-shadow] duration-300 hover:border-(--primary)/50 hover:shadow-[0_24px_48px_-28px_rgba(20,28,18,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--primary)/60 sm:h-44 sm:w-44 lg:h-44 lg:w-44 xl:h-48 xl:w-48"
       >
         <div
           ref={photoRef}
@@ -115,29 +115,38 @@ export function TeamAvatar({ member }: TeamAvatarProps) {
             src={member.image}
             alt={member.name}
             fill
-            sizes="(max-width: 640px) 176px, (max-width: 1024px) 192px, 208px"
+            sizes="(max-width: 640px) 160px, (max-width: 1024px) 176px, 192px"
             className="object-cover"
           />
         </div>
 
         <div
           ref={overlayRef}
-          className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center rounded-full bg-(--primary)/88 px-5 opacity-0 motion-reduce:transition-opacity motion-reduce:duration-300 motion-reduce:group-hover:opacity-100 motion-reduce:group-focus-visible:opacity-100"
+          className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center rounded-full bg-(--primary)/90 px-4 opacity-0 motion-reduce:transition-opacity motion-reduce:duration-300 motion-reduce:group-hover:opacity-100 motion-reduce:group-focus-visible:opacity-100"
         >
           <span
             ref={nameRef}
-            className="text-base font-semibold leading-tight text-[#f6f4ed] opacity-0 motion-reduce:transition-opacity motion-reduce:duration-300 motion-reduce:group-hover:opacity-100 motion-reduce:group-focus-visible:opacity-100"
+            className="text-sm font-semibold leading-tight text-[#f6f4ed] sm:text-base opacity-0 motion-reduce:transition-opacity motion-reduce:duration-300 motion-reduce:group-hover:opacity-100 motion-reduce:group-focus-visible:opacity-100"
           >
             {member.name}
           </span>
           <span
             ref={roleRef}
-            className="mt-2.5 max-w-[9.5rem] text-[11px] leading-snug tracking-[0.12em] text-[#f6f4ed]/85 uppercase opacity-0 motion-reduce:transition-opacity motion-reduce:duration-300 motion-reduce:group-hover:opacity-100 motion-reduce:group-focus-visible:opacity-100"
+            className="mt-2 max-w-[10rem] text-[10px] leading-snug tracking-[0.1em] text-[#f6f4ed]/90 uppercase sm:text-[11px] opacity-0 motion-reduce:transition-opacity motion-reduce:duration-300 motion-reduce:group-hover:opacity-100 motion-reduce:group-focus-visible:opacity-100"
           >
             {member.role}
           </span>
         </div>
       </button>
+
+      <div className="mt-3.5 flex flex-col items-center">
+        <h3 className="text-sm font-semibold tracking-tight text-(--fg) sm:text-base">
+          {member.name}
+        </h3>
+        <p className="mt-1 max-w-[12rem] text-xs text-(--muted) leading-snug">
+          {member.role}
+        </p>
+      </div>
     </article>
   );
 }

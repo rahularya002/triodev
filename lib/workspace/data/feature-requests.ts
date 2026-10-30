@@ -8,12 +8,12 @@ export const featureRequests: FeatureRequest[] = [
     description: "Add a dark mode toggle to the client portal with system preference detection and persistent user choice.",
     priority: "high",
     status: "in-development",
-    assignedDeveloper: teamMembers[0],
+    assignedDeveloper: teamMembers[1],
     votes: 12,
     hasVoted: true,
     comments: [
       { id: "c1", author: "Rahul Client", text: "This would be great for late-night reviews.", createdAt: "2025-05-10" },
-      { id: "c2", author: "John Doe", text: "Working on this for Sprint 4.", createdAt: "2025-05-15" },
+      { id: "c2", author: "Ritik Saini", text: "Working on this for Sprint 4.", createdAt: "2025-05-15" },
     ],
     timeline: [
       { id: "tl1", event: "Request submitted", date: "2025-05-08" },
@@ -31,7 +31,7 @@ export const featureRequests: FeatureRequest[] = [
     status: "under-review",
     votes: 8,
     comments: [
-      { id: "c3", author: "Sarah Chen", text: "Evaluating PDF generation libraries.", createdAt: "2025-05-18" },
+      { id: "c3", author: "Bhawna Anand", text: "Evaluating PDF generation libraries.", createdAt: "2025-05-18" },
     ],
     timeline: [
       { id: "tl4", event: "Request submitted", date: "2025-05-14" },
@@ -56,10 +56,10 @@ export const featureRequests: FeatureRequest[] = [
     description: "Allow clients to customize their dashboard with drag-and-drop widgets for metrics they care about.",
     priority: "high",
     status: "completed",
-    assignedDeveloper: teamMembers[1],
+    assignedDeveloper: teamMembers[2],
     votes: 15,
     comments: [
-      { id: "c4", author: "Alice Smith", text: "Shipped in v1.2.0!", createdAt: "2025-05-01" },
+      { id: "c4", author: "Chetna Sharma", text: "Shipped in v1.2.0!", createdAt: "2025-05-01" },
     ],
     timeline: [
       { id: "tl7", event: "Request submitted", date: "2025-04-01" },
@@ -76,7 +76,7 @@ export const featureRequests: FeatureRequest[] = [
     status: "declined",
     votes: 3,
     comments: [
-      { id: "c5", author: "Sarah Chen", text: "Not in scope for current phase.", createdAt: "2025-05-05" },
+      { id: "c5", author: "Bhawna Anand", text: "Not in scope for current phase.", createdAt: "2025-05-05" },
     ],
     timeline: [
       { id: "tl10", event: "Request submitted", date: "2025-04-20" },

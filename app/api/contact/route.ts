@@ -61,7 +61,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const { error } = await supabase.from("contact_inquiries").insert({
+  const { error } = await (supabase as any).from("contact_inquiries").insert({
     name,
     email,
     budget: budget || null,

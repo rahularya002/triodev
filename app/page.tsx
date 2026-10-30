@@ -28,6 +28,7 @@ import {
 } from "../components/agency/data";
 import { useAgencyAnimations } from "../components/agency/hooks/useAgencyAnimations";
 import { useSmoothScroll } from "../components/agency/hooks/useSmoothScroll";
+import { FaqJsonLd } from "../components/seo/json-ld";
 import type { ThemeMode } from "../components/agency/types";
 
 export default function Home() {
@@ -77,6 +78,7 @@ export default function Home() {
         className="relative min-h-screen overflow-x-clip bg-(--bg) text-(--fg) transition-colors duration-500"
       >
         <BackgroundArt />
+        <FaqJsonLd />
         <Header />
 
         <main className="relative z-10 mx-auto flex w-full max-w-7xl flex-col gap-20 px-6 pb-20 md:px-10">

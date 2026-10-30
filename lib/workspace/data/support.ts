@@ -12,8 +12,8 @@ export const supportTickets: SupportTicket[] = [
     updatedAt: "2025-06-26",
     messages: [
       { id: "m1", author: "Rahul Client", text: "The dashboard page shows a blank screen when accessed from mobile Safari.", createdAt: "2025-06-25" },
-      { id: "m2", author: "John Doe", text: "Thanks for reporting this. We're investigating the Safari rendering issue.", createdAt: "2025-06-25", isStaff: true },
-      { id: "m3", author: "John Doe", text: "Found the issue - it's related to CSS grid fallback. Fix is in progress.", createdAt: "2025-06-26", isStaff: true },
+      { id: "m2", author: "Ritik Saini", text: "Thanks for reporting this. We're investigating the Safari rendering issue.", createdAt: "2025-06-25", isStaff: true },
+      { id: "m3", author: "Ritik Saini", text: "Found the issue - it's related to CSS grid fallback. Fix is in progress.", createdAt: "2025-06-26", isStaff: true },
     ],
   },
   {
@@ -56,7 +56,7 @@ export const supportTickets: SupportTicket[] = [
     updatedAt: "2025-05-29",
     messages: [
       { id: "m9", author: "Rahul Client", text: "Login keeps redirecting back to login page.", createdAt: "2025-05-28" },
-      { id: "m10", author: "John Doe", text: "Fixed in v1.2.3. Cookie domain mismatch was the cause.", createdAt: "2025-05-29", isStaff: true },
+      { id: "m10", author: "Ritik Saini", text: "Fixed in v1.2.3. Cookie domain mismatch was the cause.", createdAt: "2025-05-29", isStaff: true },
     ],
   },
 ]
