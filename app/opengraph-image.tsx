@@ -76,7 +76,7 @@ export default function OpengraphImage() {
             textTransform: "uppercase",
           }}
         >
-          triodev.studio
+          triodev.in
         </div>
       </div>
     ),

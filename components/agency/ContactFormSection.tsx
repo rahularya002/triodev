@@ -109,6 +109,7 @@ export function ContactFormSection() {
               <input
                 name="name"
                 type="text"
+                autoComplete="name"
                 placeholder="Your name"
                 required
                 className="rounded-xl border border-(--primary)/20 bg-(--bg) px-4 py-3 text-sm tracking-normal text-(--fg) outline-none transition focus:border-(--primary)/45 focus-visible:ring-2 focus-visible:ring-(--primary)/35"
@@ -119,6 +120,8 @@ export function ContactFormSection() {
               <input
                 name="email"
                 type="email"
+                autoComplete="email"
+                inputMode="email"
                 placeholder="you@company.com"
                 required
                 className="rounded-xl border border-(--primary)/20 bg-(--bg) px-4 py-3 text-sm tracking-normal text-(--fg) outline-none transition focus:border-(--primary)/45 focus-visible:ring-2 focus-visible:ring-(--primary)/35"
@@ -143,15 +146,16 @@ export function ContactFormSection() {
               required
               minLength={MIN_BRIEF_LENGTH}
               maxLength={MAX_BRIEF_LENGTH}
+              aria-describedby="brief-help"
               className="rounded-xl border border-(--primary)/20 bg-(--bg) px-4 py-3 text-sm tracking-normal text-(--fg) outline-none transition focus:border-(--primary)/45 focus-visible:ring-2 focus-visible:ring-(--primary)/35"
             />
-            <span className="text-[11px] tracking-normal text-(--muted) normal-case">
+            <span id="brief-help" className="text-[11px] tracking-normal text-(--muted) normal-case">
               At least {MIN_BRIEF_LENGTH} characters. Include goals, audience, and timeline if you can.
             </span>
           </label>
           <p
-            aria-live="polite"
-            role="status"
+            aria-live={status === "error" ? "assertive" : "polite"}
+            role={status === "error" ? "alert" : "status"}
             className={[
               "min-h-5 text-sm",
               status === "success"

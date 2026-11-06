@@ -1,11 +1,11 @@
 import type { Project, TeamMember } from "../types"
 
 export const teamMembers: TeamMember[] = [
-  { id: "1", name: "Bhawna Anand", role: "Co-Founder & Head of Operations", avatar: "/team/bhawna.svg", email: "bhawna@triodev.studio" },
-  { id: "2", name: "Ritik Saini", role: "Co-Founder & Tech Lead", avatar: "/team/ritik.svg", email: "ritik@triodev.studio" },
-  { id: "3", name: "Chetna Sharma", role: "Co-Founder & Design Lead", avatar: "/team/chetna.svg", email: "chetna@triodev.studio" },
-  { id: "4", name: "Aditya Saraf", role: "Co-Founder & Marketing Lead", avatar: "/team/aditya.svg", email: "aditya@triodev.studio" },
-  { id: "5", name: "Vishwas Bhardwaj", role: "Co-Founder & AI Media Lead", avatar: "/team/vishwas.svg", email: "vishwas@triodev.studio" },
+  { id: "1", name: "Bhawna Anand", role: "Co-Founder & Head of Operations", avatar: "/team/bhawna.svg", email: "bhawna@triodev.in" },
+  { id: "2", name: "Ritik Saini", role: "Co-Founder & Tech Lead", avatar: "/team/ritik.svg", email: "ritik@triodev.in" },
+  { id: "3", name: "Chetna Sharma", role: "Co-Founder & Design Lead", avatar: "/team/chetna.svg", email: "chetna@triodev.in" },
+  { id: "4", name: "Aditya Saraf", role: "Co-Founder & Marketing Lead", avatar: "/team/aditya.svg", email: "aditya@triodev.in" },
+  { id: "5", name: "Vishwas Bhardwaj", role: "Co-Founder & AI Media Lead", avatar: "/team/vishwas.svg", email: "vishwas@triodev.in" },
 ]
 
 export const projects: Project[] = [

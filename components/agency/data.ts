@@ -178,39 +178,39 @@ export const testimonials: TestimonialItem[] = [
 
 export const teamMembers: TeamMember[] = [
   {
-    name: "Bhawna Anand",
-    role: "Co-Founder & Head of Operations",
-    initials: "BA",
-    specialty: "Studio operations, process architecture, and strategic delivery",
-    image: "/team/bhawna.svg",
-  },
-  {
     name: "Ritik Saini",
     role: "Co-Founder & Tech Lead",
     initials: "RS",
     specialty: "Full-stack architecture, technical strategy, and engineering execution",
-    image: "/team/ritik.svg",
+    image: "/team/ritik.png",
   },
   {
-    name: "Chetna Sharma",
-    role: "Co-Founder & Design Lead",
-    initials: "CS",
-    specialty: "Product design systems, intuitive UI/UX, and brand identity",
-    image: "/team/chetna.svg",
-  },
-  {
-    name: "Aditya Saraf",
-    role: "Co-Founder & Marketing Lead",
-    initials: "AS",
-    specialty: "Growth marketing, go-to-market strategy, and brand positioning",
-    image: "/team/aditya.svg",
+    name: "Bhawna Anand",
+    role: "Co-Founder & Head of Operations",
+    initials: "BA",
+    specialty: "Studio operations, process architecture, and strategic delivery",
+    image: "/team/bhawna.jpeg",
   },
   {
     name: "Vishwas Bhardwaj",
     role: "Co-Founder & AI Media Lead",
     initials: "VB",
     specialty: "Generative AI workflows, creative media, and intelligent design tools",
-    image: "/team/vishwas.svg",
+    image: "/team/vishwas.jpeg",
+  },
+  {
+    name: "Chetna Sharma",
+    role: "Co-Founder & Design Lead",
+    initials: "CS",
+    specialty: "Product design systems, intuitive UI/UX, and brand identity",
+    image: "/team/chetna.jpeg",
+  },
+  {
+    name: "Aditya Saraf",
+    role: "Co-Founder & Marketing Lead",
+    initials: "AS",
+    specialty: "Growth marketing, go-to-market strategy, and brand positioning",
+    image: "/team/aditya.jpeg",
   },
 ];
 

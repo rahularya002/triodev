@@ -74,7 +74,7 @@ Staff accounts are not created via public signup. After a user signs up:
 ```sql
 update public.profiles
 set role = 'triodev_staff'
-where email = 'your-email@triodev.studio';
+where email = 'your-email@triodev.in';
 ```
 
 That user can then sign in at `/auth/login` and access `/admin`.

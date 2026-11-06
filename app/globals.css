@@ -40,6 +40,39 @@ body {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
+:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 1000;
+  top: 1rem;
+  left: 1rem;
+  transform: translateY(-180%);
+  border-radius: 0.5rem;
+  background: var(--surface);
+  color: var(--foreground);
+  padding: 0.75rem 1rem;
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 html.lenis,
 html.lenis body {
   height: auto;

@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+~import type { Metadata } from "next"
 import { LegalPage, type LegalSection } from "@/components/site/legal-page"
 import { siteConfig } from "@/lib/site-config"
 
