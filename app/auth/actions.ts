@@ -1,10 +1,10 @@
 "use server"
 
 import { redirect } from "next/navigation"
-import { headers } from "next/headers"
 import { createSupabaseServerClient, createServiceRoleClient } from "@/lib/supabase/server"
 import { slugifyOrganizationName, getRedirectPathForProfile } from "@/lib/auth/utils"
 import { userHasOrganization, getCurrentProfile } from "@/lib/auth/session"
+import { getSiteOrigin } from "@/lib/auth/origin"
 
 export async function signInWithEmail(formData: FormData) {
   const email = String(formData.get("email") ?? "").trim()
@@ -140,7 +140,7 @@ export async function signInWithGoogle(next?: string) {
   }
 
   const supabase = await createSupabaseServerClient()
-  const origin = (await headers()).get("origin") ?? process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+  const origin = await getSiteOrigin()
 
   const redirectTo = new URL("/auth/callback", origin)
   if (next) redirectTo.searchParams.set("next", next)

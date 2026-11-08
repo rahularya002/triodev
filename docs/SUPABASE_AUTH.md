@@ -10,9 +10,10 @@ Copy [`.env.example`](.env.example) to `.env.local` and set:
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY` — anon or publishable key (required for auth)
 - `SUPABASE_SERVICE_ROLE_KEY` — server-only, for contact form and admin tasks
 
-Optional:
+Required in production:
 
-- `NEXT_PUBLIC_SITE_URL` — e.g. `http://localhost:3000` (used for OAuth redirects in production)
+- `NEXT_PUBLIC_SITE_URL` — your live origin with no trailing slash, e.g. `https://triodev.in`  
+  OAuth `redirectTo` uses this. If it is missing or still set to localhost, Google sign-in breaks in prod.
 
 ## Apply migrations
 
@@ -43,10 +44,25 @@ Or apply via Supabase Dashboard SQL editor.
 1. Create OAuth credentials in [Google Cloud Console](https://console.cloud.google.com/)
 2. **Authentication → Providers → Google** — enable and paste Client ID + Secret
 3. **Authentication → URL Configuration**
-   - Site URL: `http://localhost:3000`
-   - Redirect URLs:
+   - Site URL: `https://triodev.in` (production canonical URL)
+   - Redirect URLs (add all that you use):
      - `http://localhost:3000/auth/callback`
-     - `https://your-production-domain.com/auth/callback`
+     - `https://triodev.in/auth/callback`
+     - `https://www.triodev.in/auth/callback` (if you use www)
+     - any `*.vercel.app` preview URL you need for testing
+
+4. **Google Cloud Console → Credentials → OAuth 2.0 Client**
+   - Authorized JavaScript origins: `https://triodev.in`, `http://localhost:3000`
+   - Authorized redirect URIs must include your Supabase callback:
+     `https://<project-ref>.supabase.co/auth/v1/callback`
+     (this is set by Supabase — copy it from Authentication → Providers → Google)
+
+### Production checklist (OAuth works locally but not in prod)
+
+1. Set `NEXT_PUBLIC_SITE_URL=https://triodev.in` in Vercel (or your host) env vars and **redeploy**.
+2. Add `https://triodev.in/auth/callback` under Supabase → Authentication → URL Configuration → Redirect URLs.
+3. Confirm Site URL in Supabase is the production domain (not only localhost).
+4. Confirm Google Cloud OAuth client still has the Supabase `/auth/v1/callback` redirect URI.
 
 ## Routes
 
